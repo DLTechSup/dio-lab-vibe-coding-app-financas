@@ -11,16 +11,14 @@
 
 Conceito de app de finanças pessoais com IA, criado com **Vibe Coding** para o desafio da [DIO](https://www.dio.me/).
 
-![Status](https://img.shields.io/badge/status-prot%C3%B3tipo%20interativo-10B981?style=for-the-badge)
+![Status](https://img.shields.io/badge/status-online-10B981?style=for-the-badge)
 ![Claude Design](https://img.shields.io/badge/prot%C3%B3tipo-Claude%20Design-D97757?style=for-the-badge&logo=anthropic&logoColor=white)
 ![Claude Code](https://img.shields.io/badge/reposit%C3%B3rio-Claude%20Code-0F3D3E?style=for-the-badge&logo=anthropic&logoColor=white)
-![Vibe Coding](https://img.shields.io/badge/m%C3%A9todo-Vibe%20Coding-F59E0B?style=for-the-badge)
+![GitHub Pages](https://img.shields.io/badge/hospedagem-GitHub%20Pages-181717?style=for-the-badge&logo=github&logoColor=white)
 
-[**🚀 Abrir o protótipo**](LINK_DO_PROTOTIPO) · [**📄 PRD completo**](docs/PRD-Claude-Design.md) · [**🎬 Vídeo de demonstração**](LINK_DO_VIDEO)
+[**🌐 Site do Tostão**](https://dltechsup.github.io/dio-lab-vibe-coding-app-financas/Tostao%20Landing.dc.html) · [**💻 App web**](https://dltechsup.github.io/dio-lab-vibe-coding-app-financas/Tostao%20Web.dc.html) · [**📱 App mobile**](https://dltechsup.github.io/dio-lab-vibe-coding-app-financas/Tostao.dc.html) · [**📄 Documentação**](https://dltechsup.github.io/dio-lab-vibe-coding-app-financas/Tostao%20-%20Documentacao%20do%20Projeto.dc.html)
 
-<img src="docs/prints/05-painel.png" alt="Painel do mês" height="420" />
-<img src="docs/prints/06-caixinhas.png" alt="Caixinhas" height="420" />
-<img src="docs/prints/07-relatorios.png" alt="Relatórios" height="420" />
+<a href="https://dltechsup.github.io/dio-lab-vibe-coding-app-financas/Tostao%20Landing.dc.html"><img src="docs/prints/00-hero.png" alt="Landing page do Tostão" width="820" /></a>
 
 </div>
 
@@ -29,31 +27,36 @@ Conceito de app de finanças pessoais com IA, criado com **Vibe Coding** para o 
 ## 📑 Sumário
 
 1. [Resumo executivo](#-resumo-executivo)
-2. [O problema](#-o-problema)
-3. [A solução](#-a-solução)
-4. [Funcionalidades](#-funcionalidades)
-5. [Conheça o agente Tostão](#-conheça-o-agente-tostão)
-6. [O protótipo](#-o-protótipo)
-7. [Identidade visual](#-identidade-visual)
-8. [Processo de Vibe Coding](#-processo-de-vibe-coding)
-9. [Prompt final (PRD)](#-prompt-final-prd)
-10. [Arquitetura proposta](#-arquitetura-proposta)
-11. [Plano de validação](#-plano-de-validação)
-12. [Roadmap](#-roadmap)
-13. [Reflexão: o que aprendi](#-reflexão-o-que-aprendi)
-14. [Autor](#-autor)
+2. [Acesse online](#-acesse-online)
+3. [O problema](#-o-problema)
+4. [A solução](#-a-solução)
+5. [Funcionalidades](#-funcionalidades)
+6. [Conheça o agente Tostão](#-conheça-o-agente-tostão)
+7. [O protótipo](#-o-protótipo)
+8. [Identidade visual](#-identidade-visual)
+9. [Processo de Vibe Coding](#-processo-de-vibe-coding)
+10. [Prompt final (PRD)](#-prompt-final-prd)
+11. [Estrutura do repositório](#-estrutura-do-repositório)
+12. [Arquitetura proposta](#-arquitetura-proposta)
+13. [Plano de validação](#-plano-de-validação)
+14. [Roadmap](#-roadmap)
+15. [Reflexão: o que aprendi](#-reflexão-o-que-aprendi)
+16. [Autor](#-autor)
 
 ---
 
 ## 🎯 Resumo executivo
 
-O **Tostão** é o conceito de um app de finanças pessoais em que a pessoa organiza o dinheiro **conversando com um agente de IA**, em vez de preencher formulários. O agente entende frases em português informal, **confirma os dados antes de salvar** e responde com números reais do próprio usuário: nunca julgamento, sempre uma ação pequena e concreta. Basta escrever *"gastei 45 no iFood ontem"* e o app registra, categoriza e atualiza o painel. O agente acompanha **metas ("caixinhas")**, responde perguntas sobre os próprios gastos e tira dúvidas gerais de finanças.
+O **Tostão** é o conceito de um app de finanças pessoais em que a pessoa organiza o dinheiro **conversando com um agente de IA**, em vez de preencher formulários. O agente entende frases em português informal, **confirma os dados antes de salvar** e responde com números reais do próprio usuário: nunca julgamento, sempre uma ação pequena e concreta.
+
+Basta escrever *"gastei 45 no iFood ontem"* e o app registra, categoriza e atualiza o painel. Na versão web, um onboarding de 4 perguntas monta um **plano 50/30/20** adaptado à renda, e o app acompanha **metas ("caixinhas")** e sugere marcar gastos repetidos como **assinaturas**.
 
 | | |
 |---|---|
 | **Público-alvo** | Iniciantes em organização financeira, 20 a 40 anos, que usam Pix no dia a dia |
-| **Diferencial** | Registro em linguagem natural brasileira + agente proativo, não só gráficos |
+| **Diferencial** | Registro em linguagem natural brasileira + agente que orienta, não só gráficos |
 | **Métrica norte** | % de usuários que registram gastos em 4 ou mais dias por semana |
+| **Entrega** | Landing page, app web, app mobile e documentação, criados no Claude Design e publicados no GitHub Pages |
 
 **Personas**
 
@@ -62,7 +65,21 @@ O **Tostão** é o conceito de um app de finanças pessoais em que a pessoa orga
 | **Ana**, 24 | CLT | *"Meu salário some e não sei onde."* |
 | **Carlos**, 38 | Autônomo | *"Nunca sei quanto posso gastar."* |
 | **Juliana**, 31 | Quer começar a poupar | *"Começo a guardar e desisto."* |
-| **Entrega** | Protótipo interativo mobile e web, landing page e documentação, criados no Claude Design |
+
+---
+
+## 🌐 Acesse online
+
+O projeto está publicado no **GitHub Pages**, direto da raiz deste repositório.
+
+| Página | O que é | Link |
+|---|---|---|
+| 🌐 **Landing page** | Apresentação do produto; o botão "Começar agora" abre o app web | [Abrir](https://dltechsup.github.io/dio-lab-vibe-coding-app-financas/Tostao%20Landing.dc.html) |
+| 💻 **App web** | Versão desktop completa: onboarding, plano 50/30/20, chat, voz e dados salvos no navegador | [Abrir](https://dltechsup.github.io/dio-lab-vibe-coding-app-financas/Tostao%20Web.dc.html) |
+| 📱 **App mobile** | Protótipo em moldura de celular (390×844), com a identidade verde do Tostão | [Abrir](https://dltechsup.github.io/dio-lab-vibe-coding-app-financas/Tostao.dc.html) |
+| 📄 **Documentação** | Visão geral do produto, estrutura, comportamento do agente e decisões técnicas | [Abrir](https://dltechsup.github.io/dio-lab-vibe-coding-app-financas/Tostao%20-%20Documentacao%20do%20Projeto.dc.html) |
+
+> 💡 **Roteiro sugerido para testar:** abra o app web, responda o onboarding e escreva no chat `uber 23,90 e padaria 12`, confirme o card e veja o Painel mudar. Depois pergunte `quanto gastei com uber esse mês?`.
 
 ---
 
@@ -83,26 +100,30 @@ Trocar o formulário pela **conversa** e o gráfico passivo por um **consultor a
 | Abrir o app, tocar em "+", preencher valor, categoria, data e descrição | Escrever *"uber 23,90 e padaria 12"* e confirmar |
 | Escolher a categoria manualmente | A IA categoriza e, se não reconhecer, **cria a categoria** com a palavra que o usuário usou |
 | Montar o orçamento do zero | Plano 50/30/20 gerado em 4 perguntas |
-| Descobrir o estouro no fim do mês | Alerta em 80% do limite, com sugestão de ação |
+| Esquecer as assinaturas que se repetem | O app sugere marcar gastos repetidos como **recorrentes** |
 | Gráficos sem interpretação | Cada gráfico vem com um insight em linguagem simples |
 
 ---
 
 ## ✨ Funcionalidades
 
-| # | Funcionalidade | Como funciona | Status |
-|---|---|---|:---:|
-| **F1** | 💬 Registro por chat e voz | Entende frases informais e vários gastos numa frase (*"50 conto de gasolina"*), com card **Confirmar / Corrigir**. O microfone usa o reconhecimento de fala do navegador (pt-BR) | ✅ |
-| **F2** | 🏷️ Categorização inteligente | Sugere a categoria; quando não reconhece (ex.: *"almoço"*), cria na hora uma categoria com o nome dito pelo usuário, em vez de jogar em "Outros" | ✅ |
-| **F3** | 🎯 Caixinhas (metas) | Progresso, prazo e aporte mensal sugerido; o usuário cria novas metas e faz aportes pelo chat | ✅ |
-| **F4** | 🤖 Agente Tostão | Responde sobre os próprios dados (*"quanto gastei com uber esse mês?"*, *"relatório de agosto"*) e também dúvidas gerais de finanças, sempre com a mesma persona | ✅ |
-| **F5** | 📊 Relatórios com insights | Distribuição por categoria, últimos 6 meses, comparação com o mês anterior e filtro de período, com insight do agente | ✅ |
-| **F6** | ⚙️ Configurações | Nome do usuário e categorias criadas manualmente | ✅ |
-| **F7** | 🧭 Onboarding e plano 50/30/20 | Plano de economia adaptado à renda, com limites por categoria e alertas em 80% | 🔜 |
-| **F8** | 🔁 Assinaturas recorrentes | Detectar gastos repetidos e sugerir marcá-los como recorrentes | 🔜 |
-| **F9** | 🌙 Modo escuro | Tema escuro completo (fundo `#0B1215`) | 🔜 |
+| Funcionalidade | Como funciona | 📱 Mobile | 💻 Web |
+|---|---|:---:|:---:|
+| 💬 **Registro por conversa** | Entende frases informais e vários gastos numa frase, com card **Confirmar / Corrigir** antes de salvar | ✅ | ✅ |
+| 🏷️ **Categorização inteligente** | Sugere a categoria; quando não reconhece (ex.: *"almoço"*), cria na hora uma categoria com esse nome | ✅ | ✅ |
+| 🔎 **Consultas sobre os próprios dados** | *"Como estou no mês?"*, *"quanto gastei com uber esse mês?"*, *"minhas metas"* | ✅ | ✅ |
+| 📊 **Painel** | "Livre para gastar", receitas × despesas, maiores categorias e caixinhas | ✅ | ✅ |
+| 🧾 **Transações** | Lista agrupada por dia, com busca e filtro por categoria | ✅ | ✅ |
+| 🎯 **Caixinhas (metas)** | Progresso, prazo, aporte mensal sugerido e criação de novas metas | ✅ | ✅ |
+| 📈 **Relatórios com insights** | Rosca por categoria, histórico mensal e filtro de período, com frase do agente | ✅ | ✅ |
+| 🧭 **Onboarding e plano 50/30/20** | 4 perguntas (nome, renda, gastos fixos, objetivo) geram necessidades, desejos e poupança | — | ✅ |
+| 🔁 **Assinaturas recorrentes** | *"Isso parece uma assinatura. Quer marcar como recorrente?"* | — | ✅ |
+| 🎙️ **Entrada por voz** | Reconhecimento de fala do navegador em pt-BR | — | ✅ |
+| 💾 **Dados salvos no navegador** | Transações, caixinhas, categorias e nome sobrevivem ao recarregar a página | — | ✅ |
+| ⚙️ **Configurações** | Nome do usuário e categorias criadas manualmente | — | ✅ |
+| 🤖 **Perguntas gerais sobre finanças** | Respondidas por um modelo de linguagem com a persona do Tostão | — | ⚠️ |
 
-<sub>✅ funcionando no protótipo · 🔜 planejado para a próxima versão</sub>
+<sub>✅ funciona · ⚠️ funciona só dentro do Claude Design (veja as [limitações conhecidas](#limitações-conhecidas)) · — não existe nesta versão</sub>
 
 <details>
 <summary><b>🧪 Exemplos de linguagem natural</b></summary>
@@ -110,26 +131,27 @@ Trocar o formulário pela **conversa** e o gráfico passivo por um **consultor a
 | O usuário escreve | O Tostão registra |
 |---|---|
 | `gastei 45 no ifood ontem` | Despesa · R$ 45,00 · Alimentação › Delivery · ontem |
-| `uber 23,90 e padaria 12` | **Duas** despesas: Transporte e Alimentação |
+| `uber 23,90 e padaria 12` | **Duas** despesas: Transporte › App e Alimentação › Mercado |
 | `caiu o salário, 3.500` | Receita · R$ 3.500,00 · Salário |
 | `50 conto de gasolina` | Despesa · R$ 50,00 · Transporte › Combustível |
 | `guardei 200 na viagem` | Aporte de R$ 200,00 na caixinha "Viagem" |
-| `quanto gastei com uber esse mês?` | Resposta com o valor calculado |
+| `almoço 32` | Despesa · R$ 32,00 · categoria nova "Almoço" |
+| `quanto gastei com uber esse mês?` | Resposta com o valor calculado das transações |
 
 </details>
 
 ### 🧠 Como o chat entende o usuário
 
-A cada frase digitada ou falada, o agente decide entre três caminhos:
+A cada frase, o agente decide entre três caminhos:
 
 1. **Registro de transação:** identifica valor, categoria, data e descrição e mostra um card de confirmação. **Nada é gravado sem o usuário confirmar.**
-2. **Consulta sobre os próprios dados:** perguntas como *"quanto ainda tenho?"* ou *"relatório de agosto"* são respondidas com números calculados na hora sobre as transações do usuário.
-3. **Pergunta geral sobre finanças:** quando a frase não é um registro nem uma consulta, o agente usa um modelo de linguagem para responder, mantendo o tom do Tostão.
+2. **Consulta sobre os próprios dados:** perguntas como *"como estou no mês?"* são respondidas com números calculados na hora.
+3. **Pergunta geral sobre finanças:** quando a frase não é registro nem consulta, o app web envia a pergunta a um modelo de linguagem, que responde como o Tostão.
 
 ```mermaid
 flowchart LR
     M[💬 Frase do usuário] --> I{Intenção}
-    I -->|registro| C[Card de confirmação] --> S[(Salva e atualiza<br/>Painel)]
+    I -->|registro| C[Card de confirmação] --> S[(Salva e atualiza<br/>o Painel)]
     I -->|consulta| D[Cálculo sobre<br/>os dados do usuário]
     I -->|pergunta geral| L[Modelo de linguagem<br/>com a persona Tostão]
 ```
@@ -143,50 +165,30 @@ Um consultor financeiro **amigo e educador, nunca julgador**.
 - Celebra o progresso antes de apontar problemas.
 - Toda crítica vem com **uma ação pequena e concreta**.
 - Usa **números reais** do usuário, nunca exemplos genéricos.
-- Não recomenda produtos financeiros; em decisões complexas, indica um profissional.
+- Não recomenda produtos financeiros específicos.
 
 > **Registro:** *"Anotado! R$ 45 em Delivery 🍔 Você ainda tem R$ 155 livres nessa categoria."*
 >
-> **Alerta:** *"Opa, Lazer já está em 80% do limite e ainda faltam 12 dias. Quer que eu ajuste o plano?"*
+> **Plano:** *"Oi, Ana! Sou o Tostão 🪙 Seu plano: R$ 1.750,00 em necessidades, R$ 1.050,00 em desejos, R$ 700,00 em poupança."*
 >
-> **Conquista:** *"Caixinha Viagem chegou a 50%! No ritmo atual você bate a meta em novembro."*
+> **Consulta:** *"Você gastou R$ 68,80 com Uber esse mês, em 3 transações."*
 
 <p align="center">
-  <img src="docs/prints/03-chat-agente.png" alt="Chat com o agente Tostão respondendo como está o mês e as metas" width="720" />
-  <br/><sub>O agente respondendo com os números reais da usuária: saldo livre, despesas e progresso das caixinhas.</sub>
+  <img src="docs/prints/04-chat-confirmacao.png" alt="Chat mobile com card de confirmação de gasto" width="380" />
 </p>
+<p align="center"><sub>Card de confirmação no app mobile: o gasto só é salvo depois do "Confirmar".</sub></p>
 
 ---
 
 ## 📱 O protótipo
 
-[**▶️ Abrir o protótipo interativo**](LINK_DO_PROTOTIPO)
-
-📦 **Código do protótipo:** [`docs/prototipo/Tostao-prototipo-claude-design.zip`](docs/prototipo/Tostao-prototipo-claude-design.zip), exportado do Claude Design.
-
-<details>
-<summary><b>Como rodar localmente</b></summary>
-
-1. Baixe e descompacte o zip.
-2. Na pasta descompactada, rode `python -m http.server 8000` (ou qualquer servidor estático).
-3. Abra `http://localhost:8000/Tostao.dc.html` no navegador.
-
-É preciso estar conectado à internet, porque o protótipo carrega o React e as fontes do Google por CDN.
-
-</details>
-
-**Entregáveis**
-
-| Entregável | Descrição |
-|---|---|
-| 📱 **App mobile** (`Tostao.dc.html`) | Moldura de celular 390×844, com abas na parte de baixo e o Chat em destaque |
-| 💻 **App web** (`Tostao Web.dc.html`) | Versão desktop com navegação lateral, entrada por voz e persistência local |
-| 🌐 **Landing page** (`Tostao Landing.dc.html`) | Página de apresentação do produto |
-| 📄 **Documentação** | Visão geral, personas, estrutura, comportamento do agente e decisões técnicas |
+O Tostão tem **três telas de entrada**, todas navegáveis:
 
 ```mermaid
 flowchart LR
-    A[🌐 Landing page] --> CH((💬 Chat))
+    L[🌐 Landing page] -->|Começar agora| OB[🧭 Onboarding<br/>4 perguntas]
+    OB --> PL[Plano 50/30/20]
+    PL --> CH((💬 Chat))
     CH <--> PA[📊 Painel]
     CH <--> TR[🧾 Transações]
     CH <--> CX[🎯 Caixinhas]
@@ -194,16 +196,56 @@ flowchart LR
     CH <--> CF[⚙️ Configurações]
 ```
 
-**Decisões técnicas do protótipo**
+### 💻 App web
 
-- **Persistência local:** transações, caixinhas, categorias e nome do usuário ficam salvos no navegador e sobrevivem a recarregamentos.
-- **Entrada por voz:** o microfone usa o reconhecimento de fala do navegador em pt-BR, e a transcrição é enviada como se tivesse sido digitada.
-- **Respostas abertas:** perguntas que não são sobre os dados do usuário vão para um modelo de linguagem, que responde mantendo a persona do Tostão.
+Versão desktop com navegação lateral e o fluxo completo, do onboarding ao relatório. [**Abrir o app web**](https://dltechsup.github.io/dio-lab-vibe-coding-app-financas/Tostao%20Web.dc.html)
+
+| Onboarding: plano 50/30/20 | Chat: dois gastos numa frase |
+|:---:|:---:|
+| <img src="docs/prints/02-onboarding.png" alt="Plano 50/30/20 no onboarding" width="400"/> | <img src="docs/prints/20-web-chat.png" alt="Chat web com card de confirmação de dois gastos" width="400"/> |
+| **Painel** | **Transações com sugestão de assinatura** |
+| <img src="docs/prints/21-web-painel.png" alt="Painel web" width="400"/> | <img src="docs/prints/22-web-transacoes.png" alt="Transações web" width="400"/> |
+| **Caixinhas** | **Relatórios** |
+| <img src="docs/prints/23-web-caixinhas.png" alt="Caixinhas web" width="400"/> | <img src="docs/prints/24-web-relatorios.png" alt="Relatórios web" width="400"/> |
+
+### 📱 App mobile
+
+Protótipo em moldura de celular, fiel à identidade verde do Tostão. [**Abrir o app mobile**](https://dltechsup.github.io/dio-lab-vibe-coding-app-financas/Tostao.dc.html)
 
 | Painel | Transações | Caixinhas | Relatórios |
 |:---:|:---:|:---:|:---:|
 | <img src="docs/prints/05-painel.png" alt="Painel" width="190"/> | <img src="docs/prints/13-transacoes.png" alt="Transações" width="190"/> | <img src="docs/prints/06-caixinhas.png" alt="Caixinhas" width="190"/> | <img src="docs/prints/07-relatorios.png" alt="Relatórios" width="190"/> |
-| "Livre para gastar", receitas × despesas, maiores categorias e caixinhas | Lista agrupada por dia, busca e filtro por categoria | Metas com progresso, prazo e aporte mensal sugerido | Rosca por categoria e últimos 6 meses, com insight do agente |
+| "Livre para gastar", receitas × despesas, maiores categorias e caixinhas | Lista agrupada por dia, busca e filtro por categoria | Metas com progresso, prazo e aporte mensal sugerido | Rosca por categoria e histórico, com insight do agente |
+
+<p align="center">
+  <img src="docs/prints/03-chat-agente.png" alt="Chat com o agente respondendo como está o mês e as metas" width="720" />
+  <br/><sub>O agente respondendo "Como estou no mês?" e "Minhas metas" com os números da usuária.</sub>
+</p>
+
+### 🌐 Landing page
+
+Hero com o slogan e o chat em ação, 3 benefícios, "Como funciona" em 3 passos e chamada para o app. [**Abrir a landing page**](https://dltechsup.github.io/dio-lab-vibe-coding-app-financas/Tostao%20Landing.dc.html)
+
+<details>
+<summary><b>Ver a landing page completa</b></summary>
+
+<p align="center"><img src="docs/prints/14-landing-completa.png" alt="Landing page completa" width="720" /></p>
+
+</details>
+
+### Decisões técnicas do protótipo
+
+- **Persistência local (web):** transações, caixinhas, categorias, nome e onboarding ficam no `localStorage` e sobrevivem a recarregamentos.
+- **Entrada por voz (web):** o microfone usa a Web Speech API do navegador em pt-BR, e a transcrição é enviada como se tivesse sido digitada.
+- **Interpretação local:** registros e consultas são interpretados no próprio navegador, por isso respondem na hora e funcionam no site publicado.
+- **Respostas abertas (web):** perguntas gerais usam `window.claude.complete`, a ponte de IA do Claude Design, com um prompt de sistema que define a persona do Tostão.
+
+### Limitações conhecidas
+
+- **Perguntas gerais sobre finanças só funcionam dentro do Claude Design.** No GitHub Pages essa ponte de IA não existe, e o agente responde *"Não consegui responder agora"* e sugere um registro. Registros e consultas sobre os próprios dados funcionam normalmente. Na versão de produto, essa chamada passaria por um backend (veja a [arquitetura proposta](#-arquitetura-proposta)).
+- **A sugestão de assinatura é uma regra simples** e hoje aparece em muitos gastos que não são assinaturas.
+- **O app mobile não salva os dados** ao recarregar a página e não tem voz: o botão de microfone só coloca o foco no campo de texto.
+- **A entrada por voz depende do navegador:** funciona no Chrome e no Edge, mas não em todos os navegadores.
 
 ---
 
@@ -238,18 +280,18 @@ O "T" arredondado e o verde-esmeralda transmitem acolhimento e crescimento, long
 |:---:|:---:|:---:|
 | <img src="docs/assets/logo-tostao.svg" width="96" /> | <img src="docs/assets/logo-tostao.svg" width="64" /> | <img src="docs/assets/logo-tostao.svg" width="32" /> |
 
-**Paleta de cores**
+**Duas direções visuais**
 
-| Amostra | Hex | Uso |
-|:---:|---|---|
-| ![](https://img.shields.io/badge/-%20%20%20%20%20%20-10B981?style=flat-square) | `#10B981` | Primária: marca, botões e progresso |
-| ![](https://img.shields.io/badge/-%20%20%20%20%20%20-0F3D3E?style=flat-square) | `#0F3D3E` | Secundária: títulos e destaques |
-| ![](https://img.shields.io/badge/-%20%20%20%20%20%20-F59E0B?style=flat-square) | `#F59E0B` | IA, alertas e conquistas |
-| ![](https://img.shields.io/badge/-%20%20%20%20%20%20-22C55E?style=flat-square) | `#22C55E` | Receitas |
-| ![](https://img.shields.io/badge/-%20%20%20%20%20%20-F43F5E?style=flat-square) | `#F43F5E` | Despesas |
-| ![](https://img.shields.io/badge/-%20%20%20%20%20%20-F8FAFC?style=flat-square) ![](https://img.shields.io/badge/-%20%20%20%20%20%20-0B1215?style=flat-square) | `#F8FAFC` / `#0B1215` | Fundos claro e escuro |
+A landing page e o app mobile usam a **identidade principal** do Tostão. O app web explora uma **direção editorial** em preto e branco, criada no Claude Design a partir de uma referência de estilo ([`uploads/DESIGN (1).md`](uploads/DESIGN%20%281%29.md)), mantendo o logo e a mesma experiência.
 
-**Tipografia:** [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans) na marca, títulos e valores · [Inter](https://fonts.google.com/specimen/Inter) nos textos.
+| | Identidade principal (landing e mobile) | Direção editorial (app web) |
+|---|---|---|
+| **Fundo** | ![](https://img.shields.io/badge/-%20%20%20%20%20%20-F8FAFC?style=flat-square) `#F8FAFC` | ![](https://img.shields.io/badge/-%20%20%20%20%20%20-E5E5E5?style=flat-square) `#E5E5E5` |
+| **Primária** | ![](https://img.shields.io/badge/-%20%20%20%20%20%20-10B981?style=flat-square) `#10B981` | ![](https://img.shields.io/badge/-%20%20%20%20%20%20-000000?style=flat-square) `#000000` |
+| **Secundária** | ![](https://img.shields.io/badge/-%20%20%20%20%20%20-0F3D3E?style=flat-square) `#0F3D3E` | ![](https://img.shields.io/badge/-%20%20%20%20%20%20-FFFFFF?style=flat-square) `#FFFFFF` |
+| **Destaques** | ![](https://img.shields.io/badge/-%20%20%20%20%20%20-F59E0B?style=flat-square) `#F59E0B` IA e conquistas | ![](https://img.shields.io/badge/-%20%20%20%20%20%20-D1FFCA?style=flat-square) `#D1FFCA` e ![](https://img.shields.io/badge/-%20%20%20%20%20%20-FFF100?style=flat-square) `#FFF100` |
+| **Receita / despesa** | ![](https://img.shields.io/badge/-%20%20%20%20%20%20-22C55E?style=flat-square) `#22C55E` / ![](https://img.shields.io/badge/-%20%20%20%20%20%20-F43F5E?style=flat-square) `#F43F5E` | Preto, com sinal de menos nas despesas |
+| **Tipografia** | [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans) + [Inter](https://fonts.google.com/specimen/Inter) | [Anton](https://fonts.google.com/specimen/Anton) + Inter + [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono) |
 
 ---
 
@@ -261,26 +303,24 @@ O projeto foi feito **sem escrever código manualmente**: o trabalho foi definir
 flowchart LR
     I[💭 Ideia] --> R[🤖 PRD refinado<br/>com IA]
     R --> D1[Claude Design<br/>app mobile]
-    D1 --> D2[Refinos do chat<br/>e relatórios]
-    D2 --> D3[Versão web]
-    D3 --> D4[Landing page]
-    D4 --> D5[Documentação]
-    D5 --> CC[💻 Claude Code<br/>organiza o repositório]
+    D1 --> D2[App web com<br/>onboarding e voz]
+    D2 --> D3[Landing page]
+    D3 --> D4[Documentação]
+    D4 --> GP[🌐 GitHub Pages]
+    GP --> CC[💻 Claude Code<br/>organiza o repositório]
 ```
 
 | Etapa | Ferramenta | O que foi feito |
 |---|---|---|
-| 1 | IA conversacional | Transformar o modelo de PRD da DIO em um briefing completo: personas, exemplos, identidade visual |
+| 1 | IA conversacional | Transformar o modelo de PRD da DIO em um briefing completo: personas, exemplos e identidade visual |
 | 2 | Claude Design | App mobile: chat funcional, painel, transações, caixinhas e relatórios |
-| 3 | Claude Design | Refinos: filtro de período e insights nos relatórios, categorias criadas pelo chat, respostas gerais sobre finanças e tela de configurações |
-| 4 | Claude Design | Versão web com navegação lateral, entrada por voz e persistência local |
-| 5 | Claude Design | Landing page de apresentação |
-| 6 | Claude Design | Documentação do projeto |
-| 7 | Claude Code | Organização do repositório, marca em SVG e README |
+| 3 | Claude Design | App web: onboarding com plano 50/30/20, assinaturas recorrentes, voz, dados salvos no navegador e direção visual editorial |
+| 4 | Claude Design | Landing page de apresentação |
+| 5 | Claude Design | Documentação do projeto |
+| 6 | GitHub Pages | Publicação do site direto da raiz do repositório |
+| 7 | Claude Code | Organização do repositório, marca em SVG, capturas de tela e README |
 
-> 🎬 **Vídeo das interações:** [assista aqui](LINK_DO_VIDEO)
-
-**Estratégia de prompts:** em vez de pedidos soltos, o PRD foi dividido em 5 mensagens de escopo fechado, cada uma construindo sobre a anterior. Assim, cada interação tinha um objetivo claro e verificável. Na prática, priorizei o fluxo principal (conversar → confirmar → ver o painel atualizado), a versão web e a landing page; onboarding com plano 50/30/20, assinaturas recorrentes e modo escuro ficaram no [roadmap](#-roadmap).
+**Estratégia de prompts:** em vez de pedidos soltos, o PRD foi dividido em 5 mensagens de escopo fechado, cada uma construindo sobre a anterior. Assim, cada interação tinha um objetivo claro e verificável. Priorizei o fluxo principal (conversar → confirmar → ver o painel atualizado); modo escuro, alertas de limite e resumo semanal ficaram no [roadmap](#-roadmap).
 
 ---
 
@@ -362,6 +402,42 @@ Crie uma landing page de apresentação do Tostão: hero com o slogan e o celula
 
 ---
 
+## 🗂️ Estrutura do repositório
+
+Os arquivos do site ficam na **raiz** porque o GitHub Pages publica a partir dela.
+
+```
+📦 dio-lab-vibe-coding-app-financas
+├── index.html                                 # redireciona para a landing page
+├── Tostao Landing.dc.html                     # landing page
+├── Tostao Web.dc.html                         # app web (desktop)
+├── Tostao.dc.html                             # app mobile (moldura de celular)
+├── Tostao - Documentacao do Projeto.dc.html   # documentação do produto
+├── support.js · doc-page.js · ios-frame.jsx   # runtime exportado do Claude Design
+├── logo-tostao.svg                            # logo usado pelas páginas
+├── uploads/                                   # arquivos de referência enviados ao Claude Design
+│   └── DESIGN (1).md                          # referência de estilo do app web
+├── docs/
+│   ├── PRD-Claude-Design.md                   # prompt final (PRD)
+│   ├── assets/                                # logo e wordmarks em SVG
+│   ├── prints/                                # capturas de tela usadas neste README
+│   └── prototipo/                             # zip exportado do Claude Design (primeira versão mobile)
+└── README.md
+```
+
+<details>
+<summary><b>Como rodar localmente</b></summary>
+
+1. Clone o repositório.
+2. Na raiz, rode `python -m http.server 8000` (ou qualquer servidor estático).
+3. Abra `http://localhost:8000` no navegador.
+
+É preciso estar conectado à internet, porque as páginas carregam o React e as fontes do Google por CDN.
+
+</details>
+
+---
+
 ## 🏗️ Arquitetura proposta
 
 O protótipo valida a experiência. Para virar produto, esta é a arquitetura planejada:
@@ -377,7 +453,7 @@ flowchart TB
     EF -->|resposta + transações| FE
 ```
 
-- **IA no servidor:** a chamada ao modelo passa por uma função no backend, sem expor chaves no navegador.
+- **IA no servidor:** a chamada ao modelo passa por uma função no backend, sem expor chaves no navegador. É isso que substitui a ponte `window.claude.complete`, que só existe no Claude Design.
 - **Saída estruturada:** o agente devolve JSON (`intencao`, `transacoes`, `meta`, `aporte`, `resposta`), o que torna o registro previsível e testável.
 - **Confirmação humana:** nada é salvo sem o usuário confirmar o card, evitando erros silenciosos da IA.
 - **Privacidade (LGPD):** dados isolados por usuário, com exportação e exclusão da conta.
@@ -401,7 +477,7 @@ flowchart TB
 | Usuários com ao menos 1 caixinha ativa | ≥ 50% |
 | NPS após 2 semanas | ≥ 40 |
 
-**Primeiro teste:** 5 a 10 pessoas do público-alvo navegando no protótipo com tarefas guiadas ("registre um gasto", "crie uma meta"), medindo tempo, erros e percepção.
+**Primeiro teste:** 5 a 10 pessoas do público-alvo navegando no [site publicado](https://dltechsup.github.io/dio-lab-vibe-coding-app-financas/Tostao%20Landing.dc.html) com tarefas guiadas ("registre um gasto", "crie uma meta"), medindo tempo, erros e percepção.
 
 ---
 
@@ -409,12 +485,14 @@ flowchart TB
 
 - [x] PRD e conceito do produto
 - [x] Identidade visual
-- [x] Protótipo mobile interativo no Claude Design
-- [x] Versão web com voz e persistência local
+- [x] App mobile interativo
+- [x] App web com onboarding 50/30/20, voz, assinaturas recorrentes e dados salvos no navegador
 - [x] Landing page e documentação
-- [ ] Onboarding com plano de economia 50/30/20 e alertas de limite
-- [ ] Detecção automática de assinaturas recorrentes
+- [x] Site publicado no GitHub Pages
+- [ ] Respostas de IA funcionando fora do Claude Design (backend próprio)
 - [ ] Modo escuro completo
+- [ ] Alertas de 80% do limite e resumo semanal no chat
+- [ ] Detecção de assinaturas mais precisa
 - [ ] Teste de usabilidade com o público-alvo
 - [ ] MVP funcional (React + Supabase + IA)
 - [ ] Open Finance e Pix no lugar dos dados de exemplo
@@ -435,6 +513,7 @@ flowchart TB
 **⚠️ O que não saiu como esperado**
 
 - O plano inicial era usar o Lovable, mas ele exige créditos pagos. Troquei para o Claude Design e adaptei o PRD de "app com backend" para "protótipo interativo", o que me obrigou a separar o que é **experiência** do que é **infraestrutura**.
+- Ao publicar no GitHub Pages, as respostas abertas do agente pararam de funcionar, porque dependiam de um recurso que só existe dentro do Claude Design. Foi um lembrete prático de que protótipo e produto têm infraestruturas diferentes.
 - Pedidos muito amplos geravam telas superficiais; pedidos específicos, com critérios claros, geravam resultados melhores.
 
 **💡 O que aprendi sobre conversar com IAs**
@@ -453,7 +532,6 @@ flowchart TB
 Conceito, PRD e direção do produto
 
 [![GitHub](https://img.shields.io/badge/GitHub-DLTechSup-181717?style=flat-square&logo=github)](https://github.com/DLTechSup)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Conectar-0A66C2?style=flat-square&logo=linkedin)](LINK_DO_LINKEDIN)
 
 <div align="center">
 
