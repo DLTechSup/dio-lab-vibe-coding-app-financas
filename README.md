@@ -47,14 +47,22 @@ Conceito de app de finanças pessoais com IA, criado com **Vibe Coding** para o 
 
 ## 🎯 Resumo executivo
 
-O **Tostão** é o conceito de um app mobile em que a pessoa organiza as finanças **conversando com um agente de IA**, em vez de preencher formulários. Basta escrever *"gastei 45 no iFood ontem"* e o app registra, categoriza e atualiza o painel. O agente cria um **plano de economia personalizado**, acompanha **metas ("caixinhas")** e dá **dicas com base nos números reais** do usuário.
+O **Tostão** é o conceito de um app de finanças pessoais em que a pessoa organiza o dinheiro **conversando com um agente de IA**, em vez de preencher formulários. O agente entende frases em português informal, **confirma os dados antes de salvar** e responde com números reais do próprio usuário: nunca julgamento, sempre uma ação pequena e concreta. Basta escrever *"gastei 45 no iFood ontem"* e o app registra, categoriza e atualiza o painel. O agente acompanha **metas ("caixinhas")**, responde perguntas sobre os próprios gastos e tira dúvidas gerais de finanças.
 
 | | |
 |---|---|
 | **Público-alvo** | Iniciantes em organização financeira, 20 a 40 anos, que usam Pix no dia a dia |
 | **Diferencial** | Registro em linguagem natural brasileira + agente proativo, não só gráficos |
 | **Métrica norte** | % de usuários que registram gastos em 4 ou mais dias por semana |
-| **Entrega** | Protótipo interativo de alta fidelidade, criado no Claude Design |
+
+**Personas**
+
+| Persona | Perfil | Dor principal |
+|---|---|---|
+| **Ana**, 24 | CLT | *"Meu salário some e não sei onde."* |
+| **Carlos**, 38 | Autônomo | *"Nunca sei quanto posso gastar."* |
+| **Juliana**, 31 | Quer começar a poupar | *"Começo a guardar e desisto."* |
+| **Entrega** | Protótipo interativo mobile e web, landing page e documentação, criados no Claude Design |
 
 ---
 
@@ -73,7 +81,7 @@ Trocar o formulário pela **conversa** e o gráfico passivo por um **consultor a
 | Apps tradicionais | Tostão |
 |---|---|
 | Abrir o app, tocar em "+", preencher valor, categoria, data e descrição | Escrever *"uber 23,90 e padaria 12"* e confirmar |
-| Escolher a categoria manualmente | A IA categoriza e **aprende** com as correções |
+| Escolher a categoria manualmente | A IA categoriza e, se não reconhecer, **cria a categoria** com a palavra que o usuário usou |
 | Montar o orçamento do zero | Plano 50/30/20 gerado em 4 perguntas |
 | Descobrir o estouro no fim do mês | Alerta em 80% do limite, com sugestão de ação |
 | Gráficos sem interpretação | Cada gráfico vem com um insight em linguagem simples |
@@ -82,13 +90,19 @@ Trocar o formulário pela **conversa** e o gráfico passivo por um **consultor a
 
 ## ✨ Funcionalidades
 
-| # | Funcionalidade | Como funciona |
-|---|---|---|
-| **F1** | 💬 Registro por chat e voz | Entende gírias e vários gastos numa frase (*"50 conto de gasolina"*), com card de confirmação editável |
-| **F2** | 🏷️ Categorização inteligente | Sugere a categoria, aprende com as correções e detecta assinaturas recorrentes |
-| **F3** | 🎯 Caixinhas (metas) | *"Quero juntar 5 mil pra viajar em dezembro"* vira meta com aporte mensal calculado |
-| **F4** | 🤖 Agente Tostão | Plano de economia, alertas de limite, resumo semanal e respostas sobre os próprios dados |
-| **F5** | 📊 Relatórios com insights | "Livre para gastar", gráficos por categoria e mês, comparação com o mês anterior |
+| # | Funcionalidade | Como funciona | Status |
+|---|---|---|:---:|
+| **F1** | 💬 Registro por chat e voz | Entende frases informais e vários gastos numa frase (*"50 conto de gasolina"*), com card **Confirmar / Corrigir**. O microfone usa o reconhecimento de fala do navegador (pt-BR) | ✅ |
+| **F2** | 🏷️ Categorização inteligente | Sugere a categoria; quando não reconhece (ex.: *"almoço"*), cria na hora uma categoria com o nome dito pelo usuário, em vez de jogar em "Outros" | ✅ |
+| **F3** | 🎯 Caixinhas (metas) | Progresso, prazo e aporte mensal sugerido; o usuário cria novas metas e faz aportes pelo chat | ✅ |
+| **F4** | 🤖 Agente Tostão | Responde sobre os próprios dados (*"quanto gastei com uber esse mês?"*, *"relatório de agosto"*) e também dúvidas gerais de finanças, sempre com a mesma persona | ✅ |
+| **F5** | 📊 Relatórios com insights | Distribuição por categoria, últimos 6 meses, comparação com o mês anterior e filtro de período, com insight do agente | ✅ |
+| **F6** | ⚙️ Configurações | Nome do usuário e categorias criadas manualmente | ✅ |
+| **F7** | 🧭 Onboarding e plano 50/30/20 | Plano de economia adaptado à renda, com limites por categoria e alertas em 80% | 🔜 |
+| **F8** | 🔁 Assinaturas recorrentes | Detectar gastos repetidos e sugerir marcá-los como recorrentes | 🔜 |
+| **F9** | 🌙 Modo escuro | Tema escuro completo (fundo `#0B1215`) | 🔜 |
+
+<sub>✅ funcionando no protótipo · 🔜 planejado para a próxima versão</sub>
 
 <details>
 <summary><b>🧪 Exemplos de linguagem natural</b></summary>
@@ -103,6 +117,22 @@ Trocar o formulário pela **conversa** e o gráfico passivo por um **consultor a
 | `quanto gastei com uber esse mês?` | Resposta com o valor calculado |
 
 </details>
+
+### 🧠 Como o chat entende o usuário
+
+A cada frase digitada ou falada, o agente decide entre três caminhos:
+
+1. **Registro de transação:** identifica valor, categoria, data e descrição e mostra um card de confirmação. **Nada é gravado sem o usuário confirmar.**
+2. **Consulta sobre os próprios dados:** perguntas como *"quanto ainda tenho?"* ou *"relatório de agosto"* são respondidas com números calculados na hora sobre as transações do usuário.
+3. **Pergunta geral sobre finanças:** quando a frase não é um registro nem uma consulta, o agente usa um modelo de linguagem para responder, mantendo o tom do Tostão.
+
+```mermaid
+flowchart LR
+    M[💬 Frase do usuário] --> I{Intenção}
+    I -->|registro| C[Card de confirmação] --> S[(Salva e atualiza<br/>Painel)]
+    I -->|consulta| D[Cálculo sobre<br/>os dados do usuário]
+    I -->|pergunta geral| L[Modelo de linguagem<br/>com a persona Tostão]
+```
 
 ---
 
@@ -145,17 +175,30 @@ Um consultor financeiro **amigo e educador, nunca julgador**.
 
 </details>
 
+**Entregáveis**
+
+| Entregável | Descrição |
+|---|---|
+| 📱 **App mobile** (`Tostao.dc.html`) | Moldura de celular 390×844, com abas na parte de baixo e o Chat em destaque |
+| 💻 **App web** (`Tostao Web.dc.html`) | Versão desktop com navegação lateral, entrada por voz e persistência local |
+| 🌐 **Landing page** (`Tostao Landing.dc.html`) | Página de apresentação do produto |
+| 📄 **Documentação** | Visão geral, personas, estrutura, comportamento do agente e decisões técnicas |
+
 ```mermaid
 flowchart LR
-    A[Landing page] --> O[Onboarding<br/>4 perguntas]
-    O --> P[Plano 50/30/20]
-    P --> CH((💬 Chat))
+    A[🌐 Landing page] --> CH((💬 Chat))
     CH <--> PA[📊 Painel]
     CH <--> TR[🧾 Transações]
     CH <--> CX[🎯 Caixinhas]
     CH <--> RE[📈 Relatórios]
-    PA --> PF[⚙️ Perfil]
+    CH <--> CF[⚙️ Configurações]
 ```
+
+**Decisões técnicas do protótipo**
+
+- **Persistência local:** transações, caixinhas, categorias e nome do usuário ficam salvos no navegador e sobrevivem a recarregamentos.
+- **Entrada por voz:** o microfone usa o reconhecimento de fala do navegador em pt-BR, e a transcrição é enviada como se tivesse sido digitada.
+- **Respostas abertas:** perguntas que não são sobre os dados do usuário vão para um modelo de linguagem, que responde mantendo a persona do Tostão.
 
 | Painel | Transações | Caixinhas | Relatórios |
 |:---:|:---:|:---:|:---:|
@@ -217,27 +260,27 @@ O projeto foi feito **sem escrever código manualmente**: o trabalho foi definir
 ```mermaid
 flowchart LR
     I[💭 Ideia] --> R[🤖 PRD refinado<br/>com IA]
-    R --> D1[Claude Design #1<br/>protótipo base]
-    D1 --> D2[#2 Onboarding<br/>e plano]
-    D2 --> D3[#3 Detalhes]
-    D3 --> D4[#4 Dark mode<br/>e desktop]
-    D4 --> D5[#5 Landing page]
+    R --> D1[Claude Design<br/>app mobile]
+    D1 --> D2[Refinos do chat<br/>e relatórios]
+    D2 --> D3[Versão web]
+    D3 --> D4[Landing page]
+    D4 --> D5[Documentação]
     D5 --> CC[💻 Claude Code<br/>organiza o repositório]
 ```
 
 | Etapa | Ferramenta | O que foi feito |
 |---|---|---|
 | 1 | IA conversacional | Transformar o modelo de PRD da DIO em um briefing completo: personas, exemplos, identidade visual |
-| 2 | Claude Design #1 | Protótipo base: chat funcional, painel, transações, caixinhas e relatórios |
-| 3 | Claude Design #2 | Onboarding conversacional e plano 50/30/20 |
-| 4 | Claude Design #3 | Insights, recorrência, aprendizado de categoria e perfil |
-| 5 | Claude Design #4 | Modo escuro, versão desktop e estados vazios |
-| 6 | Claude Design #5 | Landing page de apresentação |
+| 2 | Claude Design | App mobile: chat funcional, painel, transações, caixinhas e relatórios |
+| 3 | Claude Design | Refinos: filtro de período e insights nos relatórios, categorias criadas pelo chat, respostas gerais sobre finanças e tela de configurações |
+| 4 | Claude Design | Versão web com navegação lateral, entrada por voz e persistência local |
+| 5 | Claude Design | Landing page de apresentação |
+| 6 | Claude Design | Documentação do projeto |
 | 7 | Claude Code | Organização do repositório, marca em SVG e README |
 
 > 🎬 **Vídeo das interações:** [assista aqui](LINK_DO_VIDEO)
 
-**Estratégia de prompts:** em vez de pedidos soltos, o PRD foi dividido em 5 mensagens de escopo fechado, cada uma construindo sobre a anterior. Assim, cada interação tinha um objetivo claro e verificável.
+**Estratégia de prompts:** em vez de pedidos soltos, o PRD foi dividido em 5 mensagens de escopo fechado, cada uma construindo sobre a anterior. Assim, cada interação tinha um objetivo claro e verificável. Na prática, priorizei o fluxo principal (conversar → confirmar → ver o painel atualizado), a versão web e a landing page; onboarding com plano 50/30/20, assinaturas recorrentes e modo escuro ficaram no [roadmap](#-roadmap).
 
 ---
 
@@ -366,12 +409,16 @@ flowchart TB
 
 - [x] PRD e conceito do produto
 - [x] Identidade visual
-- [x] Protótipo interativo no Claude Design
+- [x] Protótipo mobile interativo no Claude Design
+- [x] Versão web com voz e persistência local
+- [x] Landing page e documentação
+- [ ] Onboarding com plano de economia 50/30/20 e alertas de limite
+- [ ] Detecção automática de assinaturas recorrentes
+- [ ] Modo escuro completo
 - [ ] Teste de usabilidade com o público-alvo
 - [ ] MVP funcional (React + Supabase + IA)
-- [ ] Leitura de comprovante Pix e nota fiscal
-- [ ] Open Finance para importar extratos
-- [ ] Contas compartilhadas e integração com WhatsApp
+- [ ] Open Finance e Pix no lugar dos dados de exemplo
+- [ ] Leitura de comprovante e integração com WhatsApp
 
 ---
 
