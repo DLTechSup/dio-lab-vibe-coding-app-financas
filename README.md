@@ -528,7 +528,7 @@ flowchart TB
 
 <img src="docs/assets/logo-tostao.svg" alt="Tostão" width="48" align="left" />
 
-**Jakero** · Showcial Media<br/>
+**DLTechSup**<br/>
 Conceito, PRD e direção do produto
 
 [![GitHub](https://img.shields.io/badge/GitHub-DLTechSup-181717?style=flat-square&logo=github)](https://github.com/DLTechSup)
