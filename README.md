@@ -1,10 +1,13 @@
 <div align="center">
 
-<img src="docs/assets/logo-tostao.png" alt="Logo Tostão" width="110" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/wordmark-dark.png" />
+  <img src="docs/assets/wordmark-light.png" alt="Tostão — seu agente financeiro por conversa" width="480" />
+</picture>
 
-# 🪙 Tostão — seu agente financeiro por conversa
+<br/>
 
-**Controle seu dinheiro em 5 segundos por dia, só conversando.**
+### Controle seu dinheiro em 5 segundos por dia, só conversando.
 
 App de organização de finanças pessoais com IA, concebido com **Vibe Coding** para o desafio da [DIO](https://www.dio.me/).
 
@@ -29,15 +32,16 @@ App de organização de finanças pessoais com IA, concebido com **Vibe Coding**
 3. [A solução](#-a-solução)
 4. [Funcionalidades do MVP](#-funcionalidades-do-mvp)
 5. [Conheça o agente Tostão](#-conheça-o-agente-tostão)
-6. [Fluxo de telas](#-fluxo-de-telas)
-7. [Arquitetura e stack](#-arquitetura-e-stack)
-8. [Processo de Vibe Coding](#-processo-de-vibe-coding)
-9. [Prompt final (PRD)](#-prompt-final-prd)
-10. [Plano de validação do MVP](#-plano-de-validação-do-mvp)
-11. [Roadmap](#-roadmap)
-12. [Reflexão: o que aprendi](#-reflexão-o-que-aprendi)
-13. [Como executar localmente](#-como-executar-localmente)
-14. [Autor](#-autor)
+6. [Identidade visual](#-identidade-visual)
+7. [Fluxo de telas](#-fluxo-de-telas)
+8. [Arquitetura e stack](#-arquitetura-e-stack)
+9. [Processo de Vibe Coding](#-processo-de-vibe-coding)
+10. [Prompt final (PRD)](#-prompt-final-prd)
+11. [Plano de validação do MVP](#-plano-de-validação-do-mvp)
+12. [Roadmap](#-roadmap)
+13. [Reflexão: o que aprendi](#-reflexão-o-que-aprendi)
+14. [Como executar localmente](#-como-executar-localmente)
+15. [Autor](#-autor)
 
 ---
 
@@ -121,6 +125,54 @@ Um consultor financeiro **amigo e educador, nunca julgador**.
   <img src="docs/prints/03-chat-agente.png" alt="Conversa com o agente Tostão" width="300" />
   <img src="docs/prints/04-alerta-limite.png" alt="Alerta de limite de categoria" width="300" />
 </p>
+
+---
+
+## 🎨 Identidade visual
+
+<table>
+<tr>
+<td width="220" align="center">
+<img src="docs/assets/logo-tostao.svg" alt="Ícone do Tostão" width="180" />
+</td>
+<td>
+
+**O conceito da marca**
+
+O ícone une três ideias em uma só forma:
+
+- 🪙 **Moeda:** o círculo com borda interna e espessura remete ao dinheiro do dia a dia, e o nome vem do tostão, antiga moeda brasileira.
+- 💬 **Balão de conversa:** a ponta no canto inferior representa o chat, o coração da experiência.
+- ✨ **Brilho âmbar:** sinaliza a inteligência artificial e os momentos de conquista.
+
+O "T" em traço arredondado e o verde-esmeralda transmitem acolhimento e crescimento, longe da frieza dos bancos tradicionais.
+
+</td>
+</tr>
+</table>
+
+**Variações da marca**
+
+| Wordmark (fundo claro) | Wordmark (fundo escuro) |
+|:---:|:---:|
+| <img src="docs/assets/wordmark-light.png" alt="Wordmark claro" width="340" /> | <img src="docs/assets/wordmark-dark.png" alt="Wordmark escuro" width="340" /> |
+
+| Ícone do app (512px) | PWA (192px) | Favicon (32px) |
+|:---:|:---:|:---:|
+| <img src="docs/assets/icon-512.png" alt="Ícone 512" width="96" /> | <img src="docs/assets/icon-192.png" alt="Ícone 192" width="64" /> | <img src="docs/assets/icon-32.png" alt="Favicon" width="32" /> |
+
+**Paleta de cores**
+
+| Amostra | Hex | Uso |
+|:---:|---|---|
+| ![](https://img.shields.io/badge/-%20%20%20%20%20%20-10B981?style=flat-square) | `#10B981` | Primária: marca, botões e progresso |
+| ![](https://img.shields.io/badge/-%20%20%20%20%20%20-0F3D3E?style=flat-square) | `#0F3D3E` | Secundária: títulos e textos de destaque |
+| ![](https://img.shields.io/badge/-%20%20%20%20%20%20-F59E0B?style=flat-square) | `#F59E0B` | Destaque: IA, alertas e conquistas |
+| ![](https://img.shields.io/badge/-%20%20%20%20%20%20-22C55E?style=flat-square) | `#22C55E` | Receitas |
+| ![](https://img.shields.io/badge/-%20%20%20%20%20%20-F43F5E?style=flat-square) | `#F43F5E` | Despesas |
+| ![](https://img.shields.io/badge/-%20%20%20%20%20%20-F8FAFC?style=flat-square) ![](https://img.shields.io/badge/-%20%20%20%20%20%20-0B1215?style=flat-square) | `#F8FAFC` / `#0B1215` | Fundos claro e escuro |
+
+**Tipografia:** [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans) na marca, títulos e valores · [Inter](https://fonts.google.com/specimen/Inter) nos textos da interface.
 
 ---
 
@@ -549,7 +601,10 @@ npm run dev
 
 ## 👤 Autor
 
-**Jakero** · Showcial Media
+<img src="docs/assets/icon-192.png" alt="Tostão" width="48" align="left" />
+
+**Jakero** · Showcial Media<br/>
+Conceito, PRD e direção do produto
 
 [![GitHub](https://img.shields.io/badge/GitHub-DLTechSup-181717?style=flat-square&logo=github)](https://github.com/DLTechSup)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Conectar-0A66C2?style=flat-square&logo=linkedin)](LINK_DO_LINKEDIN)
