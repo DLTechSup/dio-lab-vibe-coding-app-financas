@@ -132,6 +132,19 @@ Um consultor financeiro **amigo e educador, nunca julgador**.
 
 [**▶️ Abrir o protótipo interativo**](LINK_DO_PROTOTIPO)
 
+📦 **Código do protótipo:** [`docs/prototipo/Tostao-prototipo-claude-design.zip`](docs/prototipo/Tostao-prototipo-claude-design.zip), exportado do Claude Design.
+
+<details>
+<summary><b>Como rodar localmente</b></summary>
+
+1. Baixe e descompacte o zip.
+2. Na pasta descompactada, rode `python -m http.server 8000` (ou qualquer servidor estático).
+3. Abra `http://localhost:8000/Tostao.dc.html` no navegador.
+
+É preciso estar conectado à internet, porque o protótipo carrega o React e as fontes do Google por CDN.
+
+</details>
+
 ```mermaid
 flowchart LR
     A[Landing page] --> O[Onboarding<br/>4 perguntas]
