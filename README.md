@@ -1,13 +1,12 @@
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/wordmark-dark.png" />
-  <img src="docs/assets/wordmark-light.png" alt="Tostão — seu agente financeiro por conversa" width="480" />
-</picture>
+<img src="docs/assets/logo-tostao.svg" alt="Logo Tostão" width="130" />
 
-<br/>
+# Tostão
 
-### Controle seu dinheiro em 5 segundos por dia, só conversando.
+#### seu agente financeiro por conversa
+
+**Controle seu dinheiro em 5 segundos por dia, só conversando.**
 
 App de organização de finanças pessoais com IA, concebido com **Vibe Coding** para o desafio da [DIO](https://www.dio.me/).
 
@@ -17,7 +16,7 @@ App de organização de finanças pessoais com IA, concebido com **Vibe Coding**
 ![React](https://img.shields.io/badge/React-TypeScript-3178C6?style=for-the-badge&logo=react&logoColor=white)
 ![Supabase](https://img.shields.io/badge/Supabase-Postgres-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
 
-[**🚀 Ver o app ao vivo**](LINK_DO_APP_NO_LOVABLE) · [**📄 PRD completo**](PRD-Tostao-App-Financas.md) · [**🎬 Vídeo de demonstração**](LINK_DO_VIDEO)
+[**🚀 Ver o app ao vivo**](LINK_DO_APP_NO_LOVABLE) · [**📄 PRD completo**](#-prompt-final-prd) · [**🎬 Vídeo de demonstração**](LINK_DO_VIDEO)
 
 <img src="docs/prints/00-hero.png" alt="Tostão rodando no celular e no desktop" width="820" />
 
@@ -151,15 +150,13 @@ O "T" em traço arredondado e o verde-esmeralda transmitem acolhimento e crescim
 </tr>
 </table>
 
-**Variações da marca**
+**Aplicações do ícone**
 
-| Wordmark (fundo claro) | Wordmark (fundo escuro) |
-|:---:|:---:|
-| <img src="docs/assets/wordmark-light.png" alt="Wordmark claro" width="340" /> | <img src="docs/assets/wordmark-dark.png" alt="Wordmark escuro" width="340" /> |
-
-| Ícone do app (512px) | PWA (192px) | Favicon (32px) |
+| Ícone do app | PWA | Favicon |
 |:---:|:---:|:---:|
-| <img src="docs/assets/icon-512.png" alt="Ícone 512" width="96" /> | <img src="docs/assets/icon-192.png" alt="Ícone 192" width="64" /> | <img src="docs/assets/icon-32.png" alt="Favicon" width="32" /> |
+| <img src="docs/assets/logo-tostao.svg" alt="Ícone do app" width="96" /> | <img src="docs/assets/logo-tostao.svg" alt="Ícone PWA" width="64" /> | <img src="docs/assets/logo-tostao.svg" alt="Favicon" width="32" /> |
+
+O logo é um arquivo **SVG vetorial**: mantém a nitidez em qualquer tamanho, do favicon ao ícone da tela inicial.
 
 **Paleta de cores**
 
@@ -280,7 +277,7 @@ flowchart LR
 
 ## 📝 Prompt final (PRD)
 
-O PRD completo também está disponível em [`PRD-Tostao-App-Financas.md`](PRD-Tostao-App-Financas.md).
+Este é o briefing completo usado com a IA, refinado no Copilot antes de ser enviado ao Lovable.
 
 <details>
 <summary><b>📄 Clique para expandir o prompt principal enviado ao Lovable</b></summary>
@@ -363,254 +360,4 @@ Integração bancária / Open Finance, leitura de extrato em PDF, investimentos,
   6. Respostas com no máximo 3 frases, salvo quando o usuário pedir detalhes.
 - **Exemplos de fala:**
   - Registro: *"Anotado! R$ 45 em Delivery 🍔 Você ainda tem R$ 155 livres nessa categoria."*
-  - Alerta: *"Opa, Lazer já está em 80% do limite e ainda faltam 12 dias. Quer que eu ajuste o plano ou seguimos firmes?"*
-  - Conquista: *"Caixinha Viagem chegou a 50%! No ritmo atual você bate a meta em novembro, um mês antes do prazo."*
-
-**System prompt do agente (usar na chamada de IA):**
-```
-Você é o Tostão, agente financeiro pessoal do app Tostão. Fale em português do Brasil, com tom amigo, leve e encorajador, em no máximo 3 frases. Sua função é: (1) interpretar mensagens do usuário e extrair transações, metas e aportes em JSON estruturado; (2) responder perguntas usando SOMENTE os dados financeiros fornecidos no contexto; (3) dar dicas práticas e personalizadas com números reais. Nunca invente valores. Nunca recomende produtos financeiros específicos. Se faltar o valor de uma transação, faça uma única pergunta curta.
-```
-
-**Formato de saída estruturada da interpretação (tool calling / JSON):**
-```json
-{
-  "intencao": "registrar_transacao | criar_meta | aportar_meta | consulta | conversa",
-  "transacoes": [
-    { "tipo": "despesa|receita", "valor": 45.00, "categoria": "Alimentação", "subcategoria": "Delivery", "descricao": "iFood", "data": "2026-09-27" }
-  ],
-  "meta": { "nome": "Viagem", "valor_alvo": 5000, "prazo": "2026-12-31", "emoji": "✈️" },
-  "aporte": { "meta_nome": "Viagem", "valor": 200 },
-  "resposta": "texto curto para o usuário"
-}
-```
-
-### 6. Fluxo de telas
-
-1. **Splash / Boas-vindas** — logo, slogan e botão "Começar".
-2. **Cadastro / Login** — e-mail e senha ou Google.
-3. **Onboarding conversacional** (dentro do próprio chat, 4 perguntas):
-   1. "Como posso te chamar?"
-   2. "Quanto você recebe por mês, mais ou menos?" (aceita faixa ou "é variável")
-   3. "Quais são seus gastos fixos principais?" (chips: aluguel, contas, internet, transporte, escola…)
-   4. "Qual seu maior objetivo agora?" (chips: sair das dívidas, criar reserva, juntar pra algo, só organizar)
-   → O Tostão apresenta o **plano de economia** em um card resumido e pede confirmação.
-4. **Chat (tela principal)** — conversa com o Tostão, cards de confirmação, atalhos rápidos, microfone.
-5. **Painel** — visão do mês (seção F5).
-6. **Transações** — lista agrupada por dia, busca, filtro por categoria, deslizar para editar/excluir.
-7. **Caixinhas** — lista de metas com progresso; detalhe com histórico de aportes.
-8. **Relatórios** — gráficos e insights.
-9. **Perfil / Ajustes** — nome, renda, limites por categoria, categorias personalizadas, tema claro/escuro, exportar CSV, sair.
-
-**Navegação:** barra inferior com 5 abas — Chat (central e destacada), Painel, Transações, Caixinhas, Relatórios. Perfil no avatar do topo.
-
-### 7. Design e identidade visual
-
-- **Estilo:** fintech moderna, limpa, acolhedora — referência de qualidade: Nubank, Revolut, Monzo.
-- **Cores:**
-  - Primária: verde-esmeralda `#10B981` (dinheiro, crescimento)
-  - Secundária: azul-petróleo profundo `#0F3D3E`
-  - Destaque: âmbar `#F59E0B` (alertas e conquistas)
-  - Despesa: coral `#F43F5E` · Receita: verde `#22C55E`
-  - Fundo claro `#F8FAFC` · Fundo escuro `#0B1215`
-- **Tipografia:** Inter (textos) e Plus Jakarta Sans (títulos e valores grandes); números com `tabular-nums`.
-- **Componentes:** cantos arredondados (16px em cards), sombras suaves, microinterações com Framer Motion (entrada de mensagens, contagem animada de valores, barras de progresso), skeletons durante carregamento.
-- **Mascote/ícone:** uma moeda simpática estilizada com a letra T.
-- **Modo escuro** completo desde o MVP.
-- **Acessibilidade:** contraste AA, áreas de toque ≥ 44px, labels em todos os ícones, suporte a leitor de tela.
-
-### 8. Stack técnica
-
-- **Frontend:** React + Vite + TypeScript + Tailwind CSS + shadcn/ui + Framer Motion + Recharts + lucide-react.
-- **Backend:** Lovable Cloud (Supabase) — autenticação, banco Postgres, Row Level Security e Edge Functions.
-- **IA:** integração nativa de IA do Lovable chamada a partir de uma Edge Function (`chat-agent`), usando tool calling para devolver o JSON da seção 5. A chave nunca fica no frontend.
-- **PWA:** manifest e ícones para instalar na tela inicial do celular.
-
-### 9. Modelo de dados
-
-- `profiles` — id (= auth.users.id), nome, renda_mensal, renda_variavel (bool), objetivo_principal, created_at
-- `categories` — id, user_id (nulo = padrão do sistema), nome, icone, cor, tipo (despesa/receita), limite_mensal
-- `transactions` — id, user_id, tipo, valor (numeric), category_id, descricao, data, origem (chat/manual/voz), recorrente (bool), created_at
-- `category_rules` — id, user_id, padrao_descricao, category_id (aprendizado de categorização)
-- `goals` — id, user_id, nome, emoji, valor_alvo, prazo, valor_atual, status, created_at
-- `goal_contributions` — id, goal_id, user_id, valor, data
-- `chat_messages` — id, user_id, papel (user/assistant), conteudo, payload_json, created_at
-- `savings_plans` — id, user_id, necessidades_pct, desejos_pct, futuro_pct, ativo, created_at
-
-**Todas as tabelas com RLS:** cada usuário só lê e escreve os próprios dados.
-
-### 10. Requisitos não funcionais
-
-- Registrar um gasto pelo chat em **menos de 5 segundos** e no máximo 2 toques.
-- Resposta do agente em até 3 segundos, com indicador "Tostão está digitando…".
-- Layout perfeito em 360px de largura; responsivo até desktop (no desktop, chat à direita e painel à esquerda).
-- Tratamento amigável de erros (sem mensagens técnicas para o usuário).
-- **Dados de demonstração:** botão "Explorar com dados de exemplo" na tela de boas-vindas, que carrega 2 meses de transações fictícias realistas, 2 caixinhas e um plano ativo — para avaliadores testarem sem cadastro longo.
-- Aviso discreto no perfil: "O Tostão é um assistente educativo e não substitui orientação financeira profissional."
-- Conformidade básica com a LGPD: opção de exportar e excluir todos os dados da conta.
-
-### 11. Critérios de aceite do MVP
-
-- [ ] Frase "uber 23,90 e padaria 12" gera duas transações corretas com categorias certas.
-- [ ] Correção de categoria é lembrada na próxima transação com a mesma descrição.
-- [ ] "quero juntar 5 mil pra viajar em dezembro" cria caixinha com aporte mensal calculado.
-- [ ] Painel atualiza imediatamente após confirmar uma transação no chat.
-- [ ] Alerta aparece ao atingir 80% do limite de uma categoria.
-- [ ] Perguntas como "quanto gastei com mercado esse mês?" retornam o valor correto do banco.
-- [ ] Modo demo funciona sem cadastro.
-- [ ] Modo claro e escuro sem falhas visuais.
-
-### 12. Plano de validação do MVP
-
-**Hipóteses:**
-1. Registrar por conversa aumenta a frequência de registro em relação a formulários.
-2. Dicas personalizadas geram mudança real de comportamento.
-3. Metas com progresso visual aumentam a retenção.
-
-**Métricas (acompanhadas em uma tela simples de admin ou planilha):**
-
-| Métrica | Meta de sucesso |
-|---|---|
-| Tempo médio para registrar um gasto | < 5 s |
-| Taxa de acerto da categorização automática | ≥ 85% sem correção |
-| Usuários ativos que registram em ≥ 4 dias da semana | ≥ 40% |
-| Retenção na semana 4 | ≥ 30% |
-| Usuários com pelo menos 1 caixinha ativa | ≥ 50% |
-| NPS após 2 semanas | ≥ 40 |
-
-**Teste inicial:** 10 a 15 pessoas do público-alvo usando o app por 14 dias, com uma entrevista curta ao final (o que ajudou, o que irritou, voltaria a usar?).
-
-**Roadmap pós-MVP:** Open Finance para importar extratos automaticamente, leitura de foto de nota fiscal/comprovante Pix, controle de faturas de cartão, contas compartilhadas (casal/família), notificações push e integração com WhatsApp.
-
-### 13. Entregável esperado do Lovable nesta primeira geração
-
-Construa a primeira versão funcional com: onboarding conversacional, tela de Chat com interpretação de linguagem natural e cards de confirmação, Painel, Transações e Caixinhas, autenticação, banco com RLS e o modo de dados de demonstração. Siga fielmente a identidade visual da seção 7. Priorize que o fluxo **"digitar um gasto → confirmar → ver o painel atualizado"** funcione perfeitamente.
-
-</details>
-
-<details>
-<summary><b>🔁 Prompts das interações seguintes</b></summary>
-
-Use uma mensagem por vez, na ordem. Tire print de cada resultado para o README.
-
-**Interação 1** — cole o **PROMPT PRINCIPAL** acima inteiro.
-
-**Interação 2 — Agente e plano de economia**
-```
-Agora implemente por completo o agente Tostão conforme a seção 5 do PRD: onboarding conversacional com as 4 perguntas, geração do plano de economia 50/30/20 adaptado com limites por categoria, alertas de 80% e 100% do limite, e o resumo semanal automático no chat. As dicas devem sempre usar os números reais do usuário.
-```
-
-**Interação 3 — Relatórios e insights**
-```
-Crie a tela de Relatórios conforme F5: gráfico de rosca por categoria, barras dos últimos 6 meses, comparação com o mês anterior e filtro por período. Cada gráfico deve ter uma frase de insight gerada pelo agente. Adicione também a detecção de gastos recorrentes da F2.
-```
-
-**Interação 4 — Polimento e qualidade**
-```
-Faça uma revisão de qualidade profissional: microinterações com Framer Motion, skeletons de carregamento, estados vazios ilustrados e amigáveis em todas as telas, modo escuro sem falhas, acessibilidade (contraste AA, labels, áreas de toque de 44px) e layout desktop com chat à direita e painel à esquerda. Teste todos os critérios de aceite da seção 11 e corrija o que falhar.
-```
-
-**Interação 5 — Portfólio**
-```
-Adicione uma landing page pública em "/" apresentando o Tostão (hero com mockup do chat, 3 benefícios, como funciona em 3 passos e botão "Experimentar com dados de exemplo"), mova o app para "/app" e configure o PWA com manifest e ícones.
-```
-
-> **Dica:** se algo sair errado, use o recurso de reverter versão do Lovable em vez de gastar uma interação pedindo correção vaga. Quando precisar corrigir, seja específico: tela, comportamento atual e comportamento esperado.
-
-</details>
-
----
-
-## 📏 Plano de validação do MVP
-
-**Hipóteses**
-
-1. Registrar por conversa aumenta a frequência de registro em comparação com formulários.
-2. Dicas personalizadas geram mudança real de comportamento de gasto.
-3. Metas com progresso visual aumentam a retenção.
-
-| Métrica | Meta de sucesso |
-|---|---|
-| Tempo médio para registrar um gasto | < 5 segundos |
-| Acerto da categorização automática | ≥ 85% sem correção |
-| Usuários que registram em 4+ dias/semana | ≥ 40% |
-| Retenção na semana 4 | ≥ 30% |
-| Usuários com ao menos 1 caixinha ativa | ≥ 50% |
-| NPS após 2 semanas | ≥ 40 |
-
-**Teste piloto:** 10 a 15 pessoas do público-alvo usando o app por 14 dias, com entrevista curta ao final.
-
----
-
-## 🧭 Roadmap
-
-- [x] PRD e conceito do produto
-- [x] MVP funcional no Lovable (chat, categorização, caixinhas, agente, relatórios)
-- [ ] Teste piloto com 10–15 usuários
-- [ ] Leitura de foto de comprovante Pix e nota fiscal
-- [ ] Controle de faturas de cartão de crédito
-- [ ] Open Finance para importar extratos
-- [ ] Contas compartilhadas (casal e família)
-- [ ] Notificações push e integração com WhatsApp
-
----
-
-## 🧠 Reflexão: o que aprendi
-
-<!-- ✏️ Revise este texto com a sua experiência real antes de publicar. -->
-
-**✅ O que funcionou bem**
-
-- Tratar o PRD como um **contrato** foi o maior acerto. Com personas, critérios de aceite e exemplos concretos de frases, o Lovable acertou a estrutura do app logo na primeira geração.
-- Dar **exemplos de entrada e saída** (*"uber 23,90 e padaria 12" → duas transações*) foi mais eficaz do que descrever a regra em abstrato.
-- Numerar as seções do PRD permitiu prompts curtos e precisos nas interações seguintes.
-
-**⚠️ O que não saiu como esperado**
-
-- Pedidos amplos demais numa única interação geravam partes superficiais; dividir por tema (agente, relatórios, polimento) deu resultados muito melhores.
-- A IA às vezes inventava detalhes que não estavam no PRD; os critérios de aceite ajudaram a identificar e corrigir esses desvios.
-- O limite de 5 interações por dia obrigou a planejar cada mensagem com cuidado, o que no fim virou uma vantagem.
-
-**💡 O que aprendi sobre conversar com IAs**
-
-- A qualidade da resposta é proporcional à clareza da intenção: **contexto, restrições e exemplos** valem mais do que adjetivos como "bonito" ou "profissional".
-- Definir **o que não fazer** (fora do escopo) é tão importante quanto definir o que fazer.
-- Vibe Coding não é "pedir e aceitar": é **dirigir**, revisar, testar e iterar, como um gerente de produto trabalhando com um time muito rápido.
-
----
-
-## 💻 Como executar localmente
-
-```bash
-# Clone o repositório
-git clone https://github.com/DLTechSup/dio-lab-vibe-coding-app-financas.git
-cd dio-lab-vibe-coding-app-financas
-
-# Instale as dependências
-npm install
-
-# Configure as variáveis de ambiente (copie o exemplo e preencha)
-cp .env.example .env
-
-# Rode em modo desenvolvimento
-npm run dev
-```
-
-> O jeito mais rápido de testar é pelo [**app publicado**](LINK_DO_APP_NO_LOVABLE), usando o botão **"Explorar com dados de exemplo"**.
-
----
-
-## 👤 Autor
-
-<img src="docs/assets/icon-192.png" alt="Tostão" width="48" align="left" />
-
-**Jakero** · Showcial Media<br/>
-Conceito, PRD e direção do produto
-
-[![GitHub](https://img.shields.io/badge/GitHub-DLTechSup-181717?style=flat-square&logo=github)](https://github.com/DLTechSup)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Conectar-0A66C2?style=flat-square&logo=linkedin)](LINK_DO_LINKEDIN)
-
-<div align="center">
-
-<sub>Projeto desenvolvido para o desafio **Vibe Coding: App de Finanças Pessoais** da DIO.<br/>O Tostão é um conceito educativo e não substitui orientação financeira profissional.</sub>
-
-</div>
+  - Alerta: *"Opa, Lazer
