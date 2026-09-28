@@ -18,7 +18,9 @@ Conceito de app de finanças pessoais com IA, criado com **Vibe Coding** para o 
 
 [**🚀 Abrir o protótipo**](LINK_DO_PROTOTIPO) · [**📄 PRD completo**](docs/PRD-Claude-Design.md) · [**🎬 Vídeo de demonstração**](LINK_DO_VIDEO)
 
-<img src="docs/prints/00-hero.png" alt="Landing page do Tostão" width="820" />
+<img src="docs/prints/05-painel.png" alt="Painel do mês" height="420" />
+<img src="docs/prints/06-caixinhas.png" alt="Caixinhas" height="420" />
+<img src="docs/prints/07-relatorios.png" alt="Relatórios" height="420" />
 
 </div>
 
@@ -120,8 +122,8 @@ Um consultor financeiro **amigo e educador, nunca julgador**.
 > **Conquista:** *"Caixinha Viagem chegou a 50%! No ritmo atual você bate a meta em novembro."*
 
 <p align="center">
-  <img src="docs/prints/03-chat-agente.png" alt="Chat com card de confirmação" width="280" />
-  <img src="docs/prints/04-alerta-limite.png" alt="Alerta de limite" width="280" />
+  <img src="docs/prints/03-chat-agente.png" alt="Chat com o agente Tostão respondendo como está o mês e as metas" width="720" />
+  <br/><sub>O agente respondendo com os números reais da usuária: saldo livre, despesas e progresso das caixinhas.</sub>
 </p>
 
 ---
@@ -142,9 +144,10 @@ flowchart LR
     PA --> PF[⚙️ Perfil]
 ```
 
-| Onboarding | Chat | Painel | Caixinhas | Relatórios |
-|:---:|:---:|:---:|:---:|:---:|
-| <img src="docs/prints/02-onboarding.png" width="160"/> | <img src="docs/prints/03-chat-agente.png" width="160"/> | <img src="docs/prints/05-painel.png" width="160"/> | <img src="docs/prints/06-caixinhas.png" width="160"/> | <img src="docs/prints/07-relatorios.png" width="160"/> |
+| Painel | Transações | Caixinhas | Relatórios |
+|:---:|:---:|:---:|:---:|
+| <img src="docs/prints/05-painel.png" alt="Painel" width="190"/> | <img src="docs/prints/13-transacoes.png" alt="Transações" width="190"/> | <img src="docs/prints/06-caixinhas.png" alt="Caixinhas" width="190"/> | <img src="docs/prints/07-relatorios.png" alt="Relatórios" width="190"/> |
+| "Livre para gastar", receitas × despesas, maiores categorias e caixinhas | Lista agrupada por dia, busca e filtro por categoria | Metas com progresso, prazo e aporte mensal sugerido | Rosca por categoria e últimos 6 meses, com insight do agente |
 
 ---
 
@@ -209,15 +212,15 @@ flowchart LR
     D5 --> CC[💻 Claude Code<br/>organiza o repositório]
 ```
 
-| Etapa | Ferramenta | O que foi feito | Registro |
-|---|---|---|---|
-| 1 | IA conversacional | Transformar o modelo de PRD da DIO em um briefing completo: personas, exemplos, identidade visual | <img src="docs/prints/01-refinamento-prd.png" width="220"/> |
-| 2 | Claude Design #1 | Protótipo base: chat funcional, painel, transações, caixinhas e relatórios | <img src="docs/prints/08-design-1.png" width="220"/> |
-| 3 | Claude Design #2 | Onboarding conversacional e plano 50/30/20 | <img src="docs/prints/09-design-2.png" width="220"/> |
-| 4 | Claude Design #3 | Insights, recorrência, aprendizado de categoria e perfil | <img src="docs/prints/10-design-3.png" width="220"/> |
-| 5 | Claude Design #4 | Modo escuro, versão desktop e estados vazios | <img src="docs/prints/11-design-4.png" width="220"/> |
-| 6 | Claude Design #5 | Landing page de apresentação | <img src="docs/prints/12-design-5.png" width="220"/> |
-| 7 | Claude Code | Organização do repositório, marca em SVG e README | — |
+| Etapa | Ferramenta | O que foi feito |
+|---|---|---|
+| 1 | IA conversacional | Transformar o modelo de PRD da DIO em um briefing completo: personas, exemplos, identidade visual |
+| 2 | Claude Design #1 | Protótipo base: chat funcional, painel, transações, caixinhas e relatórios |
+| 3 | Claude Design #2 | Onboarding conversacional e plano 50/30/20 |
+| 4 | Claude Design #3 | Insights, recorrência, aprendizado de categoria e perfil |
+| 5 | Claude Design #4 | Modo escuro, versão desktop e estados vazios |
+| 6 | Claude Design #5 | Landing page de apresentação |
+| 7 | Claude Code | Organização do repositório, marca em SVG e README |
 
 > 🎬 **Vídeo das interações:** [assista aqui](LINK_DO_VIDEO)
 
